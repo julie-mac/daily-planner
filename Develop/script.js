@@ -3,13 +3,14 @@
 // in the html.
 $(document).ready(function () {
 
-  //Defining today's date in a variable
+  //Defining today's date and current hour in variables
   var today = dayjs();
+  var currentHour = today.hour();
+  console.log(currentHour);
 
   //Displays today's date
   var todaysDate = today.format('[Today is] dddd, MMMM D YYYY');
   $('#currentDay').text(todaysDate);
-
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -17,6 +18,17 @@ $(document).ready(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
+  
+  var saveButton = $(".saveBtn");
+
+  saveButton.on("click", function() {
+  
+
+  }
+  )
+ 
+
+
   //
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -29,4 +41,21 @@ $(document).ready(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+
+  var timeBlocks = $(".time-block");
+
+  //For loop to assign classes to past, present and future time blocks
+  for (var i = 0 ; i < timeBlocks.length ; i++) {
+    var timeBlock = $(timeBlocks[i]);
+    var timeBlockHour = parseInt(timeBlock.attr("id").split("-")[1]);
+
+    if (timeBlockHour > currentHour) {
+      timeBlock.addClass("future");
+    } else if (timeBlockHour === currentHour) {
+      timeBlock.addClass("present");
+    } else {
+      timeBlock.addClass("past");
+    }
+
+  }
 });
