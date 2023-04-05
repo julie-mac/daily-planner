@@ -18,6 +18,12 @@ No installation required - [Click here](https://julie-mac.github.io/daily-planne
 
 [julie-mac](https://github.com/julie-mac)
 
+[Georgeyoo](https://github.com/Georgeyoo) - Contributed to starter code
+
+[courtthecoop](https://github.com/courtthecoop) - Contributed to starter code
+
+[mfyke](https://github.com/mfyke) - Contributed to starter code
+
 
 ## License
 
